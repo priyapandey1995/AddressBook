@@ -25,7 +25,7 @@ public class AddressBookMain {
 		
 	do {
 		System.out.println("***AddressBook***");
-		System.out.println(" \n 1. ADD CONTACT \n 2. DISPLAY CONTACT \n 3. EDIT CONTACT \n 4.EXIT");
+		System.out.println(" \n 1. ADD CONTACT \n 2. DISPLAY CONTACT \n 3. EDIT CONTACT \n 4. DELETE CONTACT \n 5.EXIT");
 		System.out.println("Choose the operationNo");
 		operationNo = sc.nextInt();
 		
@@ -39,6 +39,9 @@ public class AddressBookMain {
 			break;
 		case 3:
 			addressBook.editContact();
+			break;
+		case 4:
+			addressBook.deleteContact();
 			break;
 		default:
 			System.out.println("Wrong Operation No");
