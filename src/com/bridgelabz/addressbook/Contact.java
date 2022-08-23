@@ -13,9 +13,12 @@ public class Contact {
 	private String lastName;
 	private String address;
 	private String city;
+	private String state;
 	private String zip;
 	private String phoneNo;
 	private String email;
+	
+	
 	
 	
 	public String getFirstName() {
@@ -42,7 +45,15 @@ public class Contact {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getZip() {
+		
+	public String getState() {
+			return state;
+	}
+	public void setState(String state) {
+			this.state = state;
+	}
+		
+    public String getZip() {
 		return zip;
 	}
 	public void setZip(String zip) {
@@ -59,6 +70,11 @@ public class Contact {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	@Override
+	public String toString() {
+		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
+				+ ", state=" + state + ", zip=" + zip + ", phoneNo=" + phoneNo + ", email=" + email + "]";
 	}
 	
 	
