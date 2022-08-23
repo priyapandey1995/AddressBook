@@ -14,6 +14,9 @@ public class AddressBookMain {
 	 */
 
 	public static void main(String[] args) {
+		/**
+		 * switch case is used to choose the operations to perform in Address Book
+		 */
 		
 		Scanner sc = new Scanner(System.in);
 		int operationNo;
@@ -22,7 +25,7 @@ public class AddressBookMain {
 		
 	do {
 		System.out.println("***AddressBook***");
-		System.out.println(" \n 1. ADD CONTACT \n 2. DISPLAY CONTACT \n 3.EXIT");
+		System.out.println(" \n 1. ADD CONTACT \n 2. DISPLAY CONTACT \n 3. EDIT CONTACT \n 4.EXIT");
 		System.out.println("Choose the operationNo");
 		operationNo = sc.nextInt();
 		
@@ -34,11 +37,14 @@ public class AddressBookMain {
 		case 2:
 			addressBook.displayContact();
 			break;
+		case 3:
+			addressBook.editContact();
+			break;
 		default:
 			System.out.println("Wrong Operation No");
 			break;
 		}
-			}while(operationNo != 3);
+			}while(operationNo != 4);
 		
 	}
 }
