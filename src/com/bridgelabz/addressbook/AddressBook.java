@@ -13,13 +13,14 @@ public class AddressBook {
 	
 	Scanner sc = new Scanner(System.in);
 	ArrayList<Contact> contactArrayList = new ArrayList<>();
-	
+	int count = 0;
 	
 	
 	public void addContact() {
 		
 		
 		Contact contact = new Contact();
+		count++;
 		System.out.println("Enter the First Name");
 		contact.setFirstName(sc.next());
 		System.out.println("Enter the Last Name");
@@ -45,6 +46,9 @@ public class AddressBook {
 			Contact contact = contactArrayList.get(i);
 		    System.out.println(contact.toString());
 	}
+		if(contactArrayList.size() == 0) {
+			System.out.println("No contacts");
+		}
 }
 	public void editContact() {
 		System.out.println("Enter the First Name of the contact to edit");
@@ -53,30 +57,61 @@ public class AddressBook {
 		
 		for(Contact contact : contactArrayList) {
 			if(contact.getFirstName().equals(firstName)) {
+				while(true) {
+				System.out.println("Select the options to edit");
+				System.out.println("\n 1.FIRST NAME \n 2.LAST NAME \n 3. ADDRESS \n 4.CITY \n 5.STATE \n 6.PHONE NUMBER \n 7.ZIPCODE \n 8.EMAIL \n 9.EXIT");
+				int feilds = sc.nextInt();
+				
 				isAvailable = true;
+				switch(feilds) {
+				case 1:
 				System.out.println("Enter the first name");
 				contact.setFirstName(sc.next());
+				break;
+				case 2:
 				System.out.println("Enter the Last Name : ");
 				contact.setLastName(sc.next());
+				break;
+				case 3:
 				System.out.println("Enter the Address : ");
 				contact.setAddress(sc.next());
+				break;
+				case 4:
 				System.out.println("Enter the City : ");
 				contact.setCity(sc.next());
+				break;
+				case 5:
 				System.out.println("Enter the State : ");
 				contact.setState(sc.next());
+				break;
+				case 6:
 				System.out.println("Enter the Zipcode : ");
 				contact.setZip(sc.next());
+				break;
+				case 7:
 				System.out.println("Enter the Mobile Number : ");
 				contact.setPhoneNo(sc.next());
+				break;
+				case 8:
 				System.out.println("Enter the Email Id : ");
 				contact.setEmail(sc.next());
+				break;
+				case 9:
+					return;
+				default:
+					System.out.println("to enter valid contacts");
 				
 				}
+				
+				System.out.println("Detailes are edited");
+				}
 			}
+		}
 		if(isAvailable == false) {
 			System.out.println("Contact not Available");
 		}
-			}
+		}
+	
 	
 	public void deleteContact() {
 		System.out.println("Enter the First Name to Delete the Contact : ");
